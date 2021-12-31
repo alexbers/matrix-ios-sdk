@@ -1944,7 +1944,7 @@ typedef void (^MXOnResumeDone)(void);
 
 - (void)handleBackgroundSyncCacheIfRequiredWithCompletion:(void (^)(void))completion
 {
-    NSParameterAssert(_state == MXSessionStateStoreDataReady || _state == MXSessionStatePaused);
+    NSParameterAssert(_state == MXSessionStateStoreDataReady || _state == MXSessionStatePaused || _state == MXSessionStatePauseRequested);
     
     //  keep the old state to revert later
     MXSessionState oldState = self.state;
